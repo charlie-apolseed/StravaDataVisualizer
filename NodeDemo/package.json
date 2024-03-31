@@ -1,0 +1,24 @@
+{
+  "name": "nodedemo",
+  "version": "1.0.0",
+  "description": "This is the strava app by Charlie",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlie-apolseed/StravaDataVisualizer.git"
+  },
+  "keywords": [
+    "example",
+    "test",
+    "strava"
+  ],
+  "author": "capolinsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/charlie-apolseed/StravaDataVisualizer/issues"
+  },
+  "homepage": "https://github.com/charlie-apolseed/StravaDataVisualizer#readme"
+}

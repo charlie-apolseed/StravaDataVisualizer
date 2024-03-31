@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+
+        <script src="Polyline.encoded.js"></script>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>
+            Hello World
+        </h1>
+        <p>Testing retrieving my most recent activity: <span class="most_recent_activity"></span></p>
+        <p>Total distance: <span class="total_distance"></span> miles</p>
+        <p>Weighted HR: <span class="weighted_hr"></span> </p>
+        <h2>Here's a map!</h2>
+        <div class="map_container">
+            <div id="map"></div>
+        </div>
+        
+    </body>
+
+<script src="strava_api.js"></script>
+</html>
