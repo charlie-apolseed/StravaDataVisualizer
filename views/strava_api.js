@@ -1,7 +1,4 @@
 
-
-
-
 const most_recent_activity = document.querySelector(".most_recent_activity");
 const total_distance = document.querySelector(".total_distance");
 const weighted_hr = document.querySelector(".weighted_hr");

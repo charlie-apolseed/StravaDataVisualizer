@@ -1,14 +1,26 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const Ride = require('../models/activity.js')
+const Ride = require('./models/activity.js')
+const path = require('path');
 
 const mongoose = require('mongoose');
 const dbURI = 'mongodb+srv://charlieapolseed:1234@cluster0.trzg1a1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+//Connect to database using mongoose
 mongoose.connect(dbURI)
+    //If connection works, start the server
     .then((result) =>  app.listen(3000))
     .catch((err) => console.log(err));
 ;
+
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+
+// Define the directory where your HTML files (views) are located
+app.set('views', path.join(__dirname, 'views'));
+
+// Optionally, you can define a static files directory (CSS, JS, images, etc.)
+app.use(express.static(path.join(__dirname, 'styles')));
 
 
 app.get('/add-activity', (req, res) => {
@@ -32,17 +44,6 @@ app.get('/add-activity', (req, res) => {
         })
 })
 
-
-app.get('/all-activities', (req, res) => {
-    Ride.find()
-        .then((result) => {
-            res.send(result);
-        })
-    .catch((err) => {
-        console.log(err)});
-})
-
-
 app.get('/get-single-activity', (req, res) => {
     Ride.findById("660cae6ec909b02d02272d34")
         .then ((result) => {
@@ -52,8 +53,22 @@ app.get('/get-single-activity', (req, res) => {
             console.log(err)});
 })
 
-
+//Home page
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.redirect('/activities');
 })
+
+//All activities
+app.get('/activities', (req, res) => {
+    Ride.find()
+        .then((result) => {
+            res.render('index', {test_name: "Charlie"});
+        })
+    .catch((err) => {
+        console.log(err)});
+})
+
+
+
+
 
