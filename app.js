@@ -55,14 +55,14 @@ app.get('/get-single-activity', (req, res) => {
 
 //Home page
 app.get('/', (req, res) => {
-  res.redirect('/activities');
+  res.render('index', {testVar: "HomePageTest"});
 })
 
 //All activities
 app.get('/activities', (req, res) => {
     Ride.find()
         .then((result) => {
-            res.render('index', {testVar: "HELLLOOOO"});
+            res.render('activities', {testVar: result.activity_name});
         })
     .catch((err) => {
         console.log(err)});
