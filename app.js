@@ -62,7 +62,7 @@ app.get('/', (req, res) => {
 app.get('/activities', (req, res) => {
     Ride.find()
         .then((result) => {
-            res.render('index', {test_name: "Charlie"});
+            res.render('index', {testVar: "HELLLOOOO"});
         })
     .catch((err) => {
         console.log(err)});
