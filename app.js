@@ -60,11 +60,13 @@ app.get('/', (req, res) => {
 
 //All activities
 app.get('/activities', (req, res) => {
-    Ride.find()
+    Ride.find().sort({ createdAt : -1 })
         .then((result) => {
-            res.render('activities', {testVar: result.activity_name});
+            console.log("got data");
+            res.render('activities', {data: result});
         })
     .catch((err) => {
+        console.log("Oh no!");
         console.log(err)});
 })
 
