@@ -1,3 +1,7 @@
+
+
+
+
 const most_recent_activity = document.querySelector(".most_recent_activity");
 const total_distance = document.querySelector(".total_distance");
 const weighted_hr = document.querySelector(".weighted_hr");
@@ -160,6 +164,7 @@ async function displayActivityPath(num) {
       var activity = activities[i];
       var activityMapData = activity.map.summary_polyline;
       var coordinates = L.Polyline.fromEncoded(activityMapData).getLatLngs();
+      console.log(coordinates);
 
       L.polyline(
         coordinates, 
